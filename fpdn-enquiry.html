@@ -1,98 +1,165 @@
-<html>
-    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
-        function timestamp() {
-        var response = document.getElementById("g-recaptcha-response");
-        if (response == null || response.value.trim() == "") {
-            var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
-            elems["ts"] = JSON.stringify(new Date().getTime());
-            document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
         }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        setInterval(timestamp, 500);
-    </script>
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="rgba(0,0,0,0.5)" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 24px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .g-recaptcha {
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
     <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DH40000008fu0" method="POST">
-        <input type=hidden name='captcha_settings' value='{"keyname":"V2","fallback":"true","orgId":"00DH40000008fu0","ts":""}'>
-        <input type=hidden name="oid" value="00DH40000008fu0">
-        <input type=hidden name="retURL" value="https://www.google.com/">
+        <input type="hidden" name='captcha_settings' value='{"keyname":"V2","fallback":"true","orgId":"00DH40000008fu0","ts":""}'>
+        <input type="hidden" name="oid" value="00DH40000008fu0">
+        <input type="hidden" name="retURL" value="https://www.google.com/">
+        
         <label for="salutation">Salutation</label>
         <select id="salutation" name="salutation">
-        <option value="">--None--</option>
-        <option value="Mr.">Mr.</option>
-        <option value="Ms.">Ms.</option>
-        <option value="Mrs.">Mrs.</option>
-        <option value="Dr.">Dr.</option>
-        <option value="Prof.">Prof.</option>
-        <option value="Mx.">Mx.</option>
-        <option value="Aunty">Aunty</option>
-        <option value="Uncle">Uncle</option>
-        <option value="Elder">Elder</option>
-        <option value="None">None</option>
+            <option value="">--None--</option>
+            <option value="Mr.">Mr.</option>
+            <option value="Ms.">Ms.</option>
+            <option value="Mrs.">Mrs.</option>
+            <option value="Dr.">Dr.</option>
+            <option value="Prof.">Prof.</option>
+            <option value="Mx.">Mx.</option>
+            <option value="Aunty">Aunty</option>
+            <option value="Uncle">Uncle</option>
+            <option value="Elder">Elder</option>
+            <option value="None">None</option>
         </select>
-        <br>
-        <label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" />
-        <br>
+        
+        <label for="company">Company</label>
+        <input id="company" maxlength="40" name="company" size="20" type="text" />
+        
         <label for="first_name">First Name</label>
         <input id="first_name" maxlength="40" name="first_name" size="20" type="text" />
-        <br>
+        
         <label for="last_name">Last Name</label>
         <input id="last_name" maxlength="80" name="last_name" size="20" type="text" />
-        <br>
+        
         <label for="email">Email</label>
         <input id="email" maxlength="80" name="email" size="20" type="text" />
-        <br>
+        
         <label for="mobile">Mobile</label>
         <input id="mobile" maxlength="40" name="mobile" size="20" type="text" />
-        <br>
+        
         <label for="city">City</label>
         <input id="city" maxlength="40" name="city" size="20" type="text" />
-        <br>
+        
         <label for="state">State/Province</label>
         <input id="state" maxlength="20" name="state" size="20" type="text" />
-        <br>
+        
         <label for="street">Street</label>
         <textarea name="street"></textarea>
-        <br>
+        
         <label for="zip">Zip</label>
         <input id="zip" maxlength="20" name="zip" size="20" type="text" />
-        <br> Aboriginal/Torres Strait Islander: <select id="00N5j00000VPDjd" name="00N5j00000VPDjd" title="Aboriginal/Torres Strait Islander">
-        <option value="">--None--</option>
-        <option value="Aboriginal">Aboriginal</option>
-        <option value="Aboriginal and Torres Strait Islander">Aboriginal and Torres Strait Islander</option>
-        <option value="Torres Strait Islander">Torres Strait Islander</option>
-        <option value="Not stated/Inadequately described">Not stated/Inadequately described</option>
-        <option value="No">No</option>
+        
+        <label for="00N5j00000VPDjd">Aboriginal/Torres Strait Islander</label>
+        <select id="00N5j00000VPDjd" name="00N5j00000VPDjd" title="Aboriginal/Torres Strait Islander">
+            <option value="">--None--</option>
+            <option value="Aboriginal">Aboriginal</option>
+            <option value="Aboriginal and Torres Strait Islander">Aboriginal and Torres Strait Islander</option>
+            <option value="Torres Strait Islander">Torres Strait Islander</option>
+            <option value="Not stated/Inadequately described">Not stated/Inadequately described</option>
+            <option value="No">No</option>
         </select>
-        <br> Has consent for data with FPDN given?: <input id="00N5j00000VPDjf" name="00N5j00000VPDjf" type="checkbox" value="1" />
-        <br> Is Birthdate an Estimate?: <input id="00N5j00000VPDjg" name="00N5j00000VPDjg" type="checkbox" value="1" />
-        <br> Birthdate: <span class="dateInput dateOnlyInput">
+        
+        <label for="00N5j00000VPDjf">Has consent for data with FPDN given?</label>
+        <input id="00N5j00000VPDjf" name="00N5j00000VPDjf" type="checkbox" value="1" />
+        
+        <label for="00N5j00000VPDjg">Is Birthdate an Estimate?</label>
+        <input id="00N5j00000VPDjg" name="00N5j00000VPDjg" type="checkbox" value="1" />
+        
+        <label for="00NH40000044JOZ">Birthdate</label>
         <input id="00NH40000044JOZ" name="00NH40000044JOZ" size="12" type="text" />
-        </span>
-        <br> Language: <select id="00N5j00000VPDjh" name="00N5j00000VPDjh" title="Language">
-        <option value="">--None--</option>
-        <option value="Aboriginal English, so described">Aboriginal English, so described</option>
-        <option value="Acehnese">Acehnese</option>
-        <option value="Acholi">Acholi</option>
-        <option value="Adnymathanha">Adnymathanha</option>
-        <option value="Other">Other</option>
-        <option value="Not Stated">Not Stated</option>
+        
+        <label for="00N5j00000VPDjh">Language</label>
+        <select id="00N5j00000VPDjh" name="00N5j00000VPDjh" title="Language">
+            <option value="">--
+
+None--</option>
+            <option value="Aboriginal English, so described">Aboriginal English, so described</option>
+            <option value="Acehnese">Acehnese</option>
+            <option value="Acholi">Acholi</option>
+            <option value="Adnymathanha">Adnymathanha</option>
+            <option value="Other">Other</option>
+            <option value="Not Stated">Not Stated</option>
         </select>
-        <br> Country of Birth: <select id="00N5j00000VPDje" name="00N5j00000VPDje" title="Country of Birth">
-        <option value="">--None--</option>
-        <option value="Adelie Land (France)">Adelie Land (France)</option>
-        <option value="Afghanistan">Afghanistan</option>
-        <option value="Aland Islands">Aland Islands</option>
-        <option value="Albania">Albania</option>
-        <option value="Algeria">Algeria</option>
-        <option value="Other">Other</option>
-        <option value="Not Stated">Not Stated</option>
+        
+        <label for="00N5j00000VPDje">Country of Birth</label>
+        <select id="00N5j00000VPDje" name="00N5j00000VPDje" title="Country of Birth">
+            <option value="">--None--</option>
+            <option value="Adelie Land (France)">Adelie Land (France)</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Aland Islands">Aland Islands</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="Other">Other</option>
+            <option value="Not Stated">Not Stated</option>
         </select>
-        <br> What assistance is required?: <textarea id="00NH40000044JOa" name="00NH40000044JOa" rows="5" type="text" wrap="soft"></textarea>
-        <br>
+        
+        <label for="00NH40000044JOa">What assistance is required?</label>
+        <textarea id="00NH40000044JOa" name="00NH40000044JOa" rows="5" type="text" wrap="soft"></textarea>
+        
         <div class="g-recaptcha" data-sitekey="6LdWgOYjAAAAAMEQ5GE1mDZ4lMpnBQ2a1sDfRBoJ"></div>
-        <br>
-        <input type="submit" name="submit"> 
+        
+        <input type="submit" name="submit">
     </form>
-    </body>
+</body>
 </html>
