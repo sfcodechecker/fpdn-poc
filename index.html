@@ -9372,8 +9372,8 @@
 		</style>
 
         <div id="ajax-content-wrap">
-            <div id="page-header-wrap" data-animate-in-effect="none" data-midnight="light" class="" style="height: 550px;">
-                <div id="page-header-bg" class="" data-padding-amt="normal" data-animate-in-effect="none" data-midnight="light" data-text-effect="none" data-bg-pos="center" data-alignment="left" data-alignment-v="middle" data-parallax="0" data-height="350" style="background-color: #000; height:550px;">
+            <div id="page-header-wrap" data-animate-in-effect="none" data-midnight="light" class="" style="height: 850px;">
+                <div id="page-header-bg" class="" data-padding-amt="normal" data-animate-in-effect="none" data-midnight="light" data-text-effect="none" data-bg-pos="center" data-alignment="left" data-alignment-v="middle" data-parallax="0" data-height="350" style="background-color: #000; height:850px;">
                     <div class="page-header-bg-image-wrap" id="nectar-page-header-p-wrap" data-parallax-speed="fast">
                         <div class="page-header-bg-image" style="background-image: url(https://sfcodechecker.github.io/fpdn-poc/FPDN_files/topbannerDisability-Business-Training.jpg);"></div>
                     </div>
@@ -9408,6 +9408,7 @@
 										<label for="last_name">Last Name</label>
 										<input id="last_name" maxlength="80" name="last_name" size="20" type="text">
 									</td>
+									<td></td>
 								</tr>
 							</table>
 							<table style="width:100%">
@@ -9420,6 +9421,14 @@
 										<label for="email">Email</label>
 										<input id="email" maxlength="80" name="email" size="20" type="text">
 									</td> 
+									<td>
+										<label id="birthdate-wrapper" for="00NH40000044JOZ">Birthdate</label>
+										<input id="birthdate-input" name="00NH40000044JOZ" type="date">
+									</td>
+									<td>
+										<label for="00N5j00000VPDjg">Is Birthdate an Estimate?</label>
+										<input id="00N5j00000VPDjg" name="00N5j00000VPDjg" type="checkbox" value="1">
+									</td>
 								</tr>								
 								<tr>
 									<td>
@@ -9430,8 +9439,6 @@
 										<label for="city">City</label>
 										<input id="city" maxlength="40" name="city" size="20" type="text">
 									</td> 
-								</tr>								
-								<tr>
 									<td>
 										<label for="state">State/Province</label>
 										<input id="state" maxlength="20" name="state" size="20" type="text">
@@ -9440,35 +9447,19 @@
 										<label for="zip">Zip</label>
 										<input id="zip" maxlength="20" name="zip" size="20" type="text">
 									</td>
-								</tr>								
+								</tr> 								
 								<tr>
 									<td>
-										<label id="birthdate-wrapper" for="00NH40000044JOZ">Birthdate</label>
-										<input id="birthdate-input" name="00NH40000044JOZ" type="date">
-									</td>
-								<td>
-									<label for="00N5j00000VPDjd">Aboriginal/Torres Strait Islander</label>
-									<select id="00N5j00000VPDjd" name="00N5j00000VPDjd" title="Aboriginal/Torres Strait Islander">
-										<option value="">--None--</option>
-										<option value="Aboriginal">Aboriginal</option>
-										<option value="Aboriginal and Torres Strait Islander">Aboriginal and Torres Strait Islander</option>
-										<option value="Torres Strait Islander">Torres Strait Islander</option>
-										<option value="Not stated/Inadequately described">Not stated/Inadequately described</option>
-										<option value="No">No</option>
-									</select>
-								</td>
-								</tr>								
-								<tr>
-									<td>
-										<label for="00N5j00000VPDjg">Is Birthdate an Estimate?</label>
-										<input id="00N5j00000VPDjg" name="00N5j00000VPDjg" type="checkbox" value="1">
-									</td>
-									<td>
-										<label for="00N5j00000VPDjf">Has consent for data with FPDN given?</label>
-										<input id="00N5j00000VPDjf" name="00N5j00000VPDjf" type="checkbox" value="1">
-									</td>
-								</tr>								
-								<tr>
+										<label for="00N5j00000VPDjd">Aboriginal/Torres Strait Islander</label>
+										<select id="00N5j00000VPDjd" name="00N5j00000VPDjd" title="Aboriginal/Torres Strait Islander">
+											<option value="">--None--</option>
+											<option value="Aboriginal">Aboriginal</option>
+											<option value="Aboriginal and Torres Strait Islander">Aboriginal and Torres Strait Islander</option>
+											<option value="Torres Strait Islander">Torres Strait Islander</option>
+											<option value="Not stated/Inadequately described">Not stated/Inadequately described</option>
+											<option value="No">No</option>
+										</select>
+									</td> 
 									<td>
 										<label for="00N5j00000VPDjh">Language</label>
 										<select id="00N5j00000VPDjh" name="00N5j00000VPDjh" title="Language">
@@ -9494,6 +9485,10 @@
 											<option value="Not Stated">Not Stated</option>
 										</select>
 									</td>
+									<td>
+										<label for="00N5j00000VPDjf">Has consent for data with FPDN given?</label>
+										<input id="00N5j00000VPDjf" name="00N5j00000VPDjf" type="checkbox" value="1">
+									</td> 
 								</tr>
 							</table>
 							<table style="width:100%">								
