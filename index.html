@@ -8770,8 +8770,8 @@
 										<input id="first_name" maxlength="40" name="first_name" size="20" type="text">
 									</td> 
 									<td>
-										<label for="last_name">Last Name</label>
-										<input id="last_name" maxlength="80" name="last_name" size="20" type="text">
+										<label for="last_name">Last Name <span style="color:red">*</span></label>
+										<input id="last_name" maxlength="80" name="last_name" size="20" type="text" required>
 									</td>
 									<td></td>
 								</tr>
@@ -8783,12 +8783,12 @@
 										<input id="mobile" maxlength="40" name="mobile" size="20" type="text">
 									</td>
 									<td>
-										<label for="email">Email</label>
-										<input id="email" maxlength="80" name="email" size="20" type="text">
+										<label for="email">Email <span style="color:red">*</span></label>
+										<input id="email" maxlength="80" name="email" size="20" type="text" required>
 									</td> 
 									<td>
 										<label id="birthdate-wrapper" for="00NH40000044JOZ">Birthdate</label>
-										<input id="birthdate-input" name="00NH40000044JOZ" type="date">
+										<input id="birthdate-input" name="00NH40000044JOZ" type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="DD/MM/YYYY">
 									</td>
 									<td>
 										<label for="00N5j00000VPDjg">Is Birthdate an Estimate?</label>
