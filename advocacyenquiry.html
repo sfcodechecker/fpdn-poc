@@ -8751,7 +8751,7 @@
 
 							<table style="width:100%"> 
 								<tr>
-									<td><label for="salutation">Salutation</label>
+									<td><label for="salutation">Salutation</label>  <span style="color:red">*</span>
 										<select id="salutation" name="salutation">
 											<option value="">--None--</option>
 											<option value="Mr.">Mr.</option>
@@ -8766,21 +8766,22 @@
 											<option value="None">None</option>
 										</select></td>
 									<td>
-										<label for="first_name">First Name</label>
+										<label for="first_name">First Name <span style="color:red">*</span></label>
 										<input id="first_name" maxlength="40" name="first_name" size="20" type="text">
 									</td> 
 									<td>
 										<label for="last_name">Last Name <span style="color:red">*</span></label>
 										<input id="last_name" maxlength="80" name="last_name" size="20" type="text" required>
 									</td>
-									<td></td>
+									<td>
+                                        <label for="mobile">Mobile  <span style="color:red">*</span></label>
+                                        <input id="mobile" maxlength="40" name="mobile" size="20" type="text"></td>
 								</tr>
 							</table>
+                            <hr/>
 							<table style="width:100%">
 								<tr>
-									<td>
-										<label for="mobile">Mobile</label>
-										<input id="mobile" maxlength="40" name="mobile" size="20" type="text">
+									<td>										
 									</td>
 									<td>
 										<label for="email">Email <span style="color:red">*</span></label>
